@@ -26,16 +26,19 @@
       </div>
     </div>
 
-    <div class="bg-gray-100 shadow-md 400 p-4">
-      <div class="flex space-x-4 justify-around">
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12" />
+    <div class="bg-gray-100 shadow-md p-4">
+      <div class="grid grid-cols-4 md:flex md:justify-around gap-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
       </div>
     </div>
+
   </section>
 
   <x-about></x-about> 
