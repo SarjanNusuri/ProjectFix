@@ -41,6 +41,6 @@
 
   </section>
 
-  <x-about></x-about> 
+  <x-about :about = '$about' /> 
 <x-produk :produk = '$product' />
 </x-layout>
