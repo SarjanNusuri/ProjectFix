@@ -69,10 +69,10 @@
             </div>
           </div>
 
-          <div class=" hidden md:flex absolute top-1/32 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-xl px-6 py-4  flex-col items-center gap-3 z-10">
-          <span class="text-blue-600 font-semibold text-2xl">6</span>
-          <p class="text-gray-600 font-medium text-sm">Member</p>
-            
+          <div class=" hidden md:flex absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white shadow-lg rounded-xl px-6 py-4  flex-col items-center gap-3 z-10">
+            <span class="text-blue-600 font-semibold text-2xl">6</span>
+            <p class="text-gray-600 font-medium text-sm">Member</p>
+              
             <div class="flex ml-2 -space-x-2">
               <img
                 class="w-6 h-6 rounded-full border border-white"
