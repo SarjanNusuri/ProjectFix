@@ -1,0 +1,21 @@
+body {
+    overflow-x: hidden;
+}
+
+#sidebar {
+    width: 250px;
+    transition: all 0.3s;
+}
+
+#sidebar.collapsed {
+    margin-left: -250px;
+}
+
+#main-wrapper {
+    margin-left: 250px;
+    transition: all 0.3s;
+}
+
+#main-wrapper.full {
+    margin-left: 0;
+}

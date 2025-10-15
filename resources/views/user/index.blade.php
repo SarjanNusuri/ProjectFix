@@ -1,3 +1,11 @@
+@push('navbar')
+  <x-navbar/>
+@endpush
+
+@push('footer')
+  <x-footer/>
+@endpush
+
 <x-layout>
   <section id="" class="pt-24 mb-10 bg-produk">
     <div class="bg-[#f5dede] flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-12">
