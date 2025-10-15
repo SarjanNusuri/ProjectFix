@@ -4,7 +4,8 @@ body {
 
 #sidebar {
     width: 250px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    z-index: 1040;
 }
 
 #sidebar.collapsed {
@@ -13,9 +14,30 @@ body {
 
 #main-wrapper {
     margin-left: 250px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 #main-wrapper.full {
     margin-left: 0;
+}
+
+/* AUTO COLLAPSE DI MOBILE */
+@media (max-width: 991.98px) {
+    #sidebar {
+        margin-left: -250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: white;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #sidebar.show {
+        margin-left: 0;
+    }
+
+    #main-wrapper {
+        margin-left: 0 !important;
+    }
 }
