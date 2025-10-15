@@ -51,7 +51,11 @@
 
     </nav>
     <div class="p-3 border-top mt-auto">
-      <button class="btn btn-danger w-100">Keluar</button>
+      <form action="{{ route('logout') }}" method="POST" class="inline">
+        @csrf
+        <button type="submit" class="btn btn-danger w-100">Keluar</button>
+      </form>
+
     </div>
   </div>
 

@@ -5,7 +5,8 @@
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
     <h2 class="text-2xl font-bold text-center text-[#2e2e2e] mb-6">Masuk ke Akun Anda</h2>
     
-    <form action="#" method="POST" class="space-y-5">
+    <form action="{{ route('login') }}" method="POST" class="space-y-5">
+      @csrf
       <!-- Email -->
       <div>
         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
