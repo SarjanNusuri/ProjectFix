@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-<<<<<<< HEAD
     //
-=======
     protected $table = 'product';
     protected $fillable = [
         'name',
@@ -17,5 +15,4 @@ class Product extends Model
         'stock',
         'image',
     ];
->>>>>>> develop
 }

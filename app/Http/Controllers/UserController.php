@@ -10,7 +10,8 @@ class UserController extends Controller
     public function index()
     {
         $product = Product::all();
-        return view('user.index',compact('product'));
+        $about = Product::all()->count();
+        return view('user.index',compact('product','about'));
     }
 
     public function detailproduk()

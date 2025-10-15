@@ -49,11 +49,6 @@
 
   </section>
 
-<<<<<<< HEAD
-  <x-about></x-about>
-<x-produk :product ='$produk' />
-=======
-  <x-about :about = '$about' /> 
-<x-produk :produk = '$product' />
->>>>>>> develop
+  <x-about :about="$about" />
+<x-produk :product="$product" /> 
 </x-layout>
