@@ -1,3 +1,11 @@
+@push('navbar')
+  <x-navbar/>
+@endpush
+
+@push('footer')
+  <x-footer/>
+@endpush
+
 <x-layout>
   <section class="max-w-5xl mx-auto py-10 px-4 pt-26" x-data="{ qty: 1 }">
     <div class="grid md:grid-cols-2 gap-10 items-center">
