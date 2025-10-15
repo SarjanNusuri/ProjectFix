@@ -15,7 +15,8 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'name' => 'mie ayam bakar',
-            'description' => 'mi ayam super enak',
+            'description' => '
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel non voluptates sed delectus quia doloribus vitae, asperiores similique deserunt? Repudiandae numquam unde corrupti quos eum maxime, labore magni tempore porro.',
             'price' => '20.000',
             'stock' => '3',
             'image' => 'burger.png',

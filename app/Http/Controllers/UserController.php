@@ -14,8 +14,9 @@ class UserController extends Controller
         return view('user.index',compact('product','about'));
     }
 
-    public function detailproduk()
+    public function detailproduk($slug)
     {
-        return view('user.detailProduk');
+        $product = Product::where('slug',$slug)->firstOrFail();
+        return view('user.detailProduk',compact('product'));
     }
 }

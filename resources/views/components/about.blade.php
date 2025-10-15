@@ -104,17 +104,5 @@
       </div>
     </div>
 
-    <!-- <div class="">
-      <section class="bg-white py-10 px-6 flex flex-col md:flex-row items-center justify-center gap-6"> -->
-  <!-- Card 1 -->
-  <!-- <div class="bg-white rounded-2xl shadow-md w-32 h-24 flex flex-col items-center justify-center">
-    <span class="text-[#c58f8f] text-2xl font-semibold"></span>
-    <p class="text-gray-600 text-sm mt-1">Product</p>
-  </div>   -->
-
-  <!-- Card 2 -->
-  <!-- <div class="bg-white rounded-2xl shadow-md w-32 h-24 flex flex-col items-center justify-center">
-    <span class="text-[#c58f8f] text-2xl font-semibold">+</span>
-    <p class="text-gray-600 text-sm mt-1">Terjual</p>
-  </div> -->
+   
 </section>

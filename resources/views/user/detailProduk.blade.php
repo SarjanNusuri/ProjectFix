@@ -9,7 +9,7 @@
 <x-layout>
   <section class="max-w-5xl mx-auto py-10 px-4 pt-26" x-data="{ qty: 1 }">
     <div class="grid md:grid-cols-2 gap-10 items-center">
-
+@foreach($product as $item)
       <!-- Gambar Produk -->
       <div class="flex justify-center">
         <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
@@ -19,17 +19,14 @@
 
       <!-- Detail Produk -->
       <div>
-        <h2 class="text-2xl font-semibold mb-1">Mie Ayam Spesial Kampus</h2>
+        <h2 class="text-2xl font-semibold mb-1">{{ $item->name }}</h2>
 
         
         <!-- Harga -->
-        <p class="text-lg font-semibold text-red-800 mb-3">Rp. 13.000</p>
+        <p class="text-lg font-semibold text-red-800 mb-3">Rp{{ $item->price }}</p>
 
         <!-- Deskripsi -->
-        <p class="text-gray-600 mb-5">
-          Mie lembut dengan potongan ayam berbumbu gurih dan kuah kaldu yang hangat.
-          Cocok untuk isi tenaga sebelum kuliah atau saat lembur tugas.
-        </p>
+        <p class="text-gray-600 mb-5">{{ $item->description }}</p>
 
         <hr class="mb-5">
 
@@ -71,7 +68,7 @@
             </svg>
           </button>
         </div>
-
+@endforeach
         <!-- Informasi Delivery -->
         <div class="w-[300px] border rounded-lg px-4 py-3 flex items-start gap-3 text-sm text-gray-600 shadow bg-white">
         <div class="flex items-start gap-3 w-full">

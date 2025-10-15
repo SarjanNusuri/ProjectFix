@@ -10,7 +10,7 @@ Route::get('/admin/1', function () {
 
 
 Route::get('/', [UserController::class, 'index'])->name('user.index');
-Route::get('/DetaiProduk', [UserController::class, 'detailproduk'])->name('user.produk');
+Route::get('/DetaiProduk/{slug}', [UserController::class, 'detailproduk'])->name('user.produk');
 
 
 Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('showlogin');
