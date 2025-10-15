@@ -21,18 +21,7 @@
       <div>
         <h2 class="text-2xl font-semibold mb-1">Mie Ayam Spesial Kampus</h2>
 
-        <!-- Rating -->
-        {{-- <div class="flex items-center mb-2 text-yellow-500">
-          <template x-for="i in 4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12 .587l3.668 7.571L24 9.423l-6 5.847L19.335 24 12 20.019 4.665 24 6 15.27 0 9.423l8.332-1.265z"/>
-            </svg>
-          </template>
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-300 fill-current" viewBox="0 0 24 24">
-            <path d="M12 .587l3.668 7.571L24 9.423l-6 5.847L19.335 24 12 20.019 4.665 24 6 15.27 0 9.423l8.332-1.265z"/>
-          </svg>
-        </div> --}}
-
+        
         <!-- Harga -->
         <p class="text-lg font-semibold text-red-800 mb-3">Rp. 13.000</p>
 
