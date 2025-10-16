@@ -18,7 +18,20 @@ class Product extends Model
     static::updating(function($product) {
         $product->slug = Str::slug($product->name);
     });
+    
 }
-    
-    
+public function getRouteKeyName()
+{
+    return 'slug';
+}
+
+        protected $fillable =[
+           'name',
+           'description',
+            'price',
+            'image',
+            'slug',
+            'stock',
+        ];
+
 }

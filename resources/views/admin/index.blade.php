@@ -4,25 +4,25 @@
   <div class="col-md-3">
     <div class="p-4 rounded-4 bg-white shadow-sm hover-shadow border h-100 transition" style="transition: 0.3s ease;">
       <p class="mb-1 text-muted">Total Penjualan</p>
-      <h4 class="text-danger fw-bold">Rp 12.450.000</h4>
+      <h4 class="text-danger fw-bold">Rp {{number_format($totaljual,0,',','.') }}</h4>
     </div>
   </div>
   <div class="col-md-3">
     <div class="p-4 rounded-4 bg-white shadow-sm hover-shadow border h-100 transition">
       <p class="mb-1 text-muted">Produk Terjual</p>
-      <h4 class="text-danger fw-bold">150+</h4>
+      <h4 class="text-danger fw-bold">{{ $produkterjual }}</h4>
     </div>
   </div>
   <div class="col-md-3">
     <div class="p-4 rounded-4 bg-white shadow-sm hover-shadow border h-100 transition">
       <p class="mb-1 text-muted">Total Pengguna</p>
-      <h4 class="text-danger fw-bold">320</h4>
+      <h4 class="text-danger fw-bold">0</h4>
     </div>
   </div>
   <div class="col-md-3">
     <div class="p-4 rounded-4 bg-white shadow-sm hover-shadow border h-100 transition">
       <p class="mb-1 text-muted">Pesanan Baru</p>
-      <h4 class="text-danger fw-bold">8</h4>
+      <h4 class="text-danger fw-bold">0</h4>
     </div>
   </div>
 </div>

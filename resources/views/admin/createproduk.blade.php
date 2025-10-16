@@ -16,25 +16,26 @@
     <!-- Form Tambah Produk -->
     <div class="card shadow-sm border-0">
       <div class="card-body">
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
+          @csrf
           <div class="row g-3">
 
             <!-- Nama Produk -->
             <div class="col-md-6">
               <label class="form-label fw-semibold">Nama Produk <span class="text-danger">*</span></label>
-              <input type="text" name="nama" class="form-control" placeholder="Masukkan nama produk" required>
+              <input type="text" name="name" class="form-control" placeholder="Masukkan nama produk" required>
             </div>
 
             <!-- Foto Produk -->
             <div class="col-md-6">
               <label class="form-label fw-semibold">Foto Produk</label>
-              <input type="file" name="foto" class="form-control" accept="image/*">
+              <input type="file" name="image" class="form-control" accept="image/*">
             </div>
 
             <!-- Harga -->
             <div class="col-md-6">
               <label class="form-label fw-semibold">Harga <span class="text-danger">*</span></label>
-              <input type="number" name="harga" class="form-control" placeholder="Contoh: 10000" required>
+              <input type="number" name="price" class="form-control" placeholder="Contoh: 10000" required>
             </div>
 
             <!-- Stok -->
@@ -46,7 +47,7 @@
             <!-- Deskripsi -->
             <div class="col-md-12">
               <label class="form-label fw-semibold">Deskripsi</label>
-              <textarea name="deskripsi" rows="3" class="form-control" placeholder="Tulis deskripsi singkat produk..."></textarea>
+              <textarea name="description" rows="3" class="form-control" placeholder="Tulis deskripsi singkat produk..."></textarea>
             </div>
 
             <!-- Tombol Simpan -->

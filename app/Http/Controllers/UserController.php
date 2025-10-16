@@ -9,14 +9,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        $product = Product::all();
+        $products = Product::all();
         $about = Product::all()->count();
-        return view('user.index',compact('product','about'));
+        return view('user.index',compact('products','about'));
     }
 
-    public function detailproduk($slug)
+    public function detailproduk(Product $product)
     {
-        $product = Product::where('slug',$slug)->firstOrFail();
-        return view('user.detailProduk',compact('product'));
+       return view('user.detailProduk',compact('product'));
     }
 }

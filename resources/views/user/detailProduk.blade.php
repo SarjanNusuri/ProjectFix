@@ -9,7 +9,7 @@
 <x-layout>
   <section class="max-w-5xl mx-auto py-10 px-4 pt-26" x-data="{ qty: 1 }">
     <div class="grid md:grid-cols-2 gap-10 items-center">
-@foreach($product as $item)
+
       <!-- Gambar Produk -->
       <div class="flex justify-center">
         <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
@@ -18,47 +18,51 @@
       </div>
 
       <!-- Detail Produk -->
-      <div>
-        <h2 class="text-2xl font-semibold mb-1">{{ $item->name }}</h2>
-
+<div>
+        <h2 class="text-2xl font-semibold mb-1">{{ $product->name }}</h2>
         
         <!-- Harga -->
-        <p class="text-lg font-semibold text-red-800 mb-3">Rp{{ $item->price }}</p>
-
+        <p class="text-lg font-semibold text-red-800 mb-3">Rp{{ number_format($product->price,0,',','.') }}</p>
+        
         <!-- Deskripsi -->
-        <p class="text-gray-600 mb-5">{{ $item->description }}</p>
-
+        <p class="text-gray-600 mb-5">{{ $product->description }}</p>
+        
         <hr class="mb-5">
 
         <!-- Tombol jumlah dan aksi -->
         <div class="flex items-center gap-3 mb-5">
-
+          
           <!-- Tombol Jumlah -->
           <div class="flex items-center border border-gray-500 rounded-lg overflow-hidden">
             <!-- Minus -->
-            <button @click="if(qty>1) qty--"
-              class="px-3 py-2 bg-rose-100 hover:bg-rose-200 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
-              </svg>
-            </button>
-
-            <!-- Jumlah -->
-            <span class="px-4 select-none text-gray-700 font-medium" x-text="qty"></span>
-
-            <!-- Plus -->
-            <button @click="qty++"
-              class="px-3 py-2 bg-rose-100 hover:bg-rose-200 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-              </svg>
-            </button>
-          </div>
-
-          <!-- Tombol Pesan -->
-          <button class="bg-rose-400 hover:bg-rose-500 text-white font-medium px-4 py-2 rounded-lg transition">
+            <button button type="" @click="if(qty>1) qty--"
+            class="px-3 py-2 bg-rose-100 hover:bg-rose-200 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+            </svg>
+          </button>
+          <form action="{{ route('order.store',$product) }}" method="POST">
+  @csrf
+          <!-- Jumlah -->
+          <span class="px-4 select-none text-gray-700 font-medium" x-text="qty"></span>
+          
+          <!-- Plus -->
+          <button type="button" @click="qty++"
+          class="px-3 py-2 bg-rose-100 hover:bg-rose-200 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </button>
+      </div>
+      
+      <input type="hidden" name="quantity" :value="qty">
+      
+      
+      <!-- Tombol Pesan -->
+          <button class="bg-rose-400 hover:bg-rose-500 text-white font-medium px-4 py-2 rounded-lg transition" type="submit">
             Pesan Sekarang
           </button>
+          </form>
 
           <!-- Favorit -->
           <button class="p-2 shadow rounded-lg hover:bg-rose-50">
@@ -68,7 +72,7 @@
             </svg>
           </button>
         </div>
-@endforeach
+
         <!-- Informasi Delivery -->
         <div class="w-[300px] border rounded-lg px-4 py-3 flex items-start gap-3 text-sm text-gray-600 shadow bg-white">
         <div class="flex items-start gap-3 w-full">
@@ -84,11 +88,12 @@
           </div>
         </div>
       </div>
-    </div>
+</div>
+    
   </section>
 
   <hr class="my-5 font-bold">
 
-  <x-produk></x-produk>
+
 
 </x-layout>

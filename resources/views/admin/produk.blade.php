@@ -20,21 +20,21 @@
             <th>Foto</th>
             <th>Harga</th>
             <th>Stok</th>
-            <th>Terjual</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
+          @forelse($produk as $item)
           <tr>
-            <td>2</td>
-            <td>Brownies Kukus</td>
-            <td>Kue</td>
-            <td>
-              <img src="{{ asset('assets/image/me.jpg') }}" alt="Nama Produk" class="img-thumbnail rounded" style="width: 60px; height: 60px; object-fit: cover;">
+            
+            <td class="p-3">{{ $no++ }}</td>
+            <td class="p-3">{{ $item->name }}</td>
+            <td class="p-3">{{ $item->description }}</td>
+            <td class="p-3">
+              <img src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->name }}" class="img-thumbnail rounded" style="width: 60px; height: 60px; object-fit: cover;">
             </td>
-            <td>Rp 25.000</td>
-            <td>80</td>
-            <td>34</td>
+            <td class="p-5">Rp {{ number_format($item->price,0,',','.') }}</td>
+            <td>{{ $item->stock }}</td>
             <td class="text-center">
               <div class="dropdown">
                 <button class="bg-transparent btn-sm border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,6 +62,8 @@
             </td>
             
           </tr>
+          @empty
+          @endforelse
           <!-- Tambahkan baris produk lainnya di sini -->
         </tbody>
       </table>

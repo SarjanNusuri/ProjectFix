@@ -50,5 +50,27 @@
   </section>
 
   <x-about :about="$about" />
-<x-produk :product="$product" /> 
+  
+  <section id="product" class="py-16 px-16">
+  <!-- Judul Section -->
+  <div class="flex items-center gap-2 mb-6">
+    <div class="w-2 h-6 bg-brand rounded"></div>
+    <h2 class="text-xl font-semibold text-gray-800">Produk</h2>
+  </div>
+
+  <!-- Grid Produk -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+@forelse($products as $item)
+  <x-produk :product="$item" />
+  @empty
+  <p class="col-span-4 text-center text-gray-500">Belum ada produk tersedia.</p>
+   
+  @endforelse
+  <!-- <p class="col-span-4 text-center text-gray-500">Belum ada produk tersedia.</p> -->
+      
+
+ 
+  </div>
+</section>
+  
 </x-layout>
