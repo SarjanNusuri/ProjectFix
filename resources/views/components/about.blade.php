@@ -14,7 +14,7 @@
     <!-- 🖼️ Gambar kiri -->
     <div class="relative">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Universitas_Negeri_Gorontalo_%28UNG%29.jpg"
+        src="{{ asset('storage/rektorat.png') }}"
         alt="Gedung Fakultas Ekonomi dan Bisnis"
         class="rounded-2xl shadow-md object-cover w-full h-80"
       />
@@ -39,7 +39,7 @@
     <div class="flex flex-col gap-6">
       <div class="flex gap-4">
         <img
-          src="https://asset.ung.ac.id/berita/1629707829.jpg"
+          src="{{ asset('storage/fekon.png') }}"
           alt="Gedung FEB UNG"
           class="rounded-2xl shadow-md object-cover w-1/2 h-52"
         />
@@ -47,12 +47,12 @@
         <!-- 🧩 Card Product + Terjual -->
         <div class="flex flex-col justify-center gap-2">
           <div class="bg-white shadow-md rounded-xl px-4 py-3 text-center">
-            <p class="text-blue-600 font-semibold text-lg">3</p>
+            <p class="text-blue-600 font-semibold text-lg">{{ $about }}</p>
             <p class="text-gray-600 text-sm">Product</p>
           </div>
 
           <div class="bg-white shadow-md rounded-xl px-4 py-3 text-center">
-            <p class="text-red-500 font-semibold text-lg">5+</p>
+            <p class="text-red-500 font-semibold text-lg">{{ $terjual }}</p>
             <p class="text-gray-600 text-sm">Terjual</p>
           </div>
 

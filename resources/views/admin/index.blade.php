@@ -38,38 +38,25 @@
         <thead class="table-light">
           <tr>
             <th>#</th>
-            <th>Nama Pembeli</th>
             <th>Produk</th>
             <th>Tanggal</th>
+            <th>Jumlah</th>
             <th>Total</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
+          @forelse($order as $item)
           <tr>
-            <td>1</td>
-            <td>Ayu Pratiwi</td>
-            <td>Paket Snack A</td>
-            <td>15 Okt 2025</td>
-            <td>Rp 45.000</td>
+            <td>{{ $id++ }}</td>
+            <td>{{ $item->product->name }}</td>
+            <td>{{ $item->created_at->diffForHumans() }}</td>
+            <td>{{ $item->jumlah }}</td>
+            <td>{{ number_format($item->total_harga,0,',','.') }}</td>
             <td><span class="badge bg-warning text-dark">Menunggu</span></td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Rudi Hartono</td>
-            <td>Paket Makanan Ringan B</td>
-            <td>15 Okt 2025</td>
-            <td>Rp 60.000</td>
-            <td><span class="badge bg-success">Selesai</span></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Lina Kurniawan</td>
-            <td>Camilan Pedas</td>
-            <td>14 Okt 2025</td>
-            <td>Rp 30.000</td>
-            <td><span class="badge bg-danger">Dibatalkan</span></td>
-          </tr>
+          @empty
+          @endforelse
         </tbody>
       </table>
     </div>

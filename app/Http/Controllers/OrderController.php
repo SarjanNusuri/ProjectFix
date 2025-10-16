@@ -21,7 +21,14 @@ class OrderController extends Controller
             'jumlah' => $jumlah,
             'total_harga' => $totalPrice,
         ]);
+        $pesan = "Halo, saya ingin memesan:\n"
+           . "Produk: " . $product->name . "\n"
+           . "Jumlah: " . $jumlah . "\n"
+           . "Total Harga: Rp " . number_format($totalPrice,0,',','.') . "\n";
 
-        return redirect()->back()->with('success', 'Pesanan berhasil dibuat!');
+    // Nomor tujuan WhatsApp (tanpa +, gunakan kode negara)
+    $no_wa = "6289531823390";
+
+        return redirect()->away("https://wa.me/$no_wa?text=" . urlencode($pesan));
     }
 }

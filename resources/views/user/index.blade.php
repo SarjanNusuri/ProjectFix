@@ -36,20 +36,20 @@
 
     <div class="bg-gray-100 shadow-md p-4">
       <div class="grid grid-cols-4 md:flex md:justify-around gap-4">
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
-        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading4.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading2.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading3.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading4.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading5.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading6.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading1.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
+        <img src="{{ asset('storage/heading2.png') }}" alt="icon" class="w-12 h-12 mx-auto" />
       </div>
     </div>
 
   </section>
 
-  <x-about :about="$about" />
+  <x-about :about="$about" :terjual="$terjual" />
   
   <section id="product" class="py-16 px-16">
   <!-- Judul Section -->

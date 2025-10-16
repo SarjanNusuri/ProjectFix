@@ -19,7 +19,6 @@
             <th>Deskripsi</th>
             <th>Foto</th>
             <th>Harga</th>
-            <th>Stok</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -33,8 +32,8 @@
             <td class="p-3">
               <img src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->name }}" class="img-thumbnail rounded" style="width: 60px; height: 60px; object-fit: cover;">
             </td>
-            <td class="p-5">Rp {{ number_format($item->price,0,',','.') }}</td>
-            <td>{{ $item->stock }}</td>
+            <td class="p-3">Rp {{ number_format($item->price,0,',','.') }}</td>
+
             <td class="text-center">
               <div class="dropdown">
                 <button class="bg-transparent btn-sm border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -42,7 +41,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a class="dropdown-item text-warning" href="#">
+                    <a class="dropdown-item text-warning" href="{{ route('admin.produkupdate',$item->slug) }}">
                       <i class="bi bi-pencil-square"></i>
                       Edit
                     </a>
@@ -52,19 +51,19 @@
                       type="button"
                       class="dropdown-item text-danger"
                       data-bs-toggle="modal"
-                      data-bs-target="#confirmDeleteModal"
-                    >
+                      data-bs-target="#confirmDeleteModal-{{ $item->id }}">
                       <i class="bi bi-trash"></i> Hapus
                     </button>
                   </li>
                 </ul>
               </div>
             </td>
-            
           </tr>
-          @empty
-          @endforelse
+
+            @empty
+            @endforelse
           <!-- Tambahkan baris produk lainnya di sini -->
+ 
         </tbody>
       </table>
     </div>
@@ -73,9 +72,11 @@
 
 </x-adminMain>
 
-
-<!-- Modal Konfirmasi Hapus -->
-<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+  <!-- Modal Konfirmasi Hapus -->
+   @foreach ($produk as $item )
+   
+   
+  <div class="modal fade" id="confirmDeleteModal-{{ $item->id }}" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content border-0">
       <div class="modal-header bg-danger text-white">
@@ -87,11 +88,13 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <form action="#" method="POST">
-          <!-- @csrf dan @method('DELETE') jika pakai Laravel -->
+        <form action="{{ route('admin.delete',$item->slug) }}" method="POST">
+          @csrf 
+           @method('DELETE') 
           <button type="submit" class="btn btn-danger">Hapus</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+@endforeach

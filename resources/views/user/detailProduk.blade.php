@@ -12,8 +12,8 @@
 
       <!-- Gambar Produk -->
       <div class="flex justify-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
-             alt="Mie Ayam Spesial Kampus"
+        <img src="{{ asset('storage/'.$product->image) }}"
+             alt="{{ $product->name }}"
              class="w-80 h-80 object-contain drop-shadow-md">
       </div>
 

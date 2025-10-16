@@ -34,4 +34,6 @@ public function getRouteKeyName()
             'stock',
         ];
 
+        
+
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Order;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -43,7 +45,12 @@ class AdminController extends Controller
     {
         $totaljual = Order::sum('total_harga');
         $produkterjual = Order::all()->count();
-        return view('admin.index',compact('produkterjual','totaljual'));
+        $order = Order::all();
+        $id=1;
+        $product=Order::find($id);
+        
+        $productName=Order::with('product')->get();
+        return view('admin.index',compact('produkterjual','order','productName','totaljual','id'));
     }
 
 
@@ -84,5 +91,46 @@ public function store(Request $request){
     return redirect()->route('admin.produk')->with('success', 'Produk berhasil ditambahkan!');
 }
         
+
+public function edit(Product $product)
+{
+    return view('admin.updateproduk', compact('product'));
+}
+public function destroy(Product $product)
+{
+    if ($product->image) {
+        Storage::delete('public/' . $product->image);
+    }
+
+    // Hapus data produk
+    $product->delete();
+    return redirect()->route('admin.produk')->with('success','data berhasil dihapus');
+}
+public function update(Request $request, Product $product)
+{
+    $validated = $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'price' => 'required',
+        'stock' => 'required',
+        'image' => 'image|mimes:jpeg,jpg,png|max:2048',
+    ]);
+
+    if($request->hasFile('image')){
+        // Hapus gambar lama jika ada
+        if($product->image){
+            Storage::delete('public/' . $product->gambar);
+        }
+
+        // Simpan gambar baru
+        $path = $request->file('image')->store('produk', 'public');
+        $validated['image'] = $path;
+    }
+    
+        $product->update($validated);
+
+    return redirect()->route('admin.produk')->with('success','data berhasi diperbarui');
+}
+
     
 }
